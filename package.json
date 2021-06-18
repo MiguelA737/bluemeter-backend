@@ -1,0 +1,26 @@
+{
+  "name": "bluemeter-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiguelA737/bluemeter-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MiguelA737/bluemeter-backend/issues"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "homepage": "https://github.com/MiguelA737/bluemeter-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.14"
+  }
+}
