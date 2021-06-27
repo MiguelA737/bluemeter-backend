@@ -6,6 +6,15 @@ const app = express();
 const hostname = "localhost";
 const port = 3000;
 
+require('dotenv').config();
+
+mongoose.connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+})
+
+app.use(express.json());
 app.use(routes);
 
 app.listen(process.env.PORT || port);
