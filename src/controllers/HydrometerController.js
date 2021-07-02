@@ -21,7 +21,7 @@ module.exports = {
     },
 
     async writeNewReading(req, res) {
-        const { id, datetime, flow } = req.query;
+        const { id, datetime, flow } = req.body;
         const hydrometer = await Hydrometer.findOne({_id: id});
 
         if(hydrometer) {
@@ -32,7 +32,7 @@ module.exports = {
 
             hydrometer.save("done");
 
-            return hydrometer;
+            return res.json(hydrometer);
         }
 
         else {
