@@ -17,6 +17,8 @@ routes.post("/company/signup", CompanyController.store);
 
 routes.get("/company/", CompanyController.findById);
 
+routes.post("/company/update-pricing", CompanyController.updatePricing);
+
 routes.post("/hydrometer/new", HydrometerController.store);
 
 routes.get("/hydrometer/", HydrometerController.findById);
