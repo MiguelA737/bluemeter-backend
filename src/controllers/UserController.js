@@ -9,7 +9,12 @@ module.exports = {
         if(user_company) {
             const user = await User.create({
                 name,
-                hydrometer
+                hydrometer,
+                company,
+                goal: {
+                    consumo: null,
+                    periodo: null
+                }
             });
 
             user_company.users.push(user);
@@ -19,7 +24,7 @@ module.exports = {
         }
 
         else {
-            return res.json({error: "Companhia não encontrada"})
+            return res.json({error: "Companhia não encontrada"});
         }
     },
 
@@ -32,7 +37,25 @@ module.exports = {
         }
 
         else {
-            return res.json({error: "Usuário não encontrado"})
+            return res.json({error: "Usuário não encontrado"});
+        }
+    },
+
+    async updateGoal(req, res) {
+        const { id, consumo, periodo } = req.body;
+        const user = await User.findOne({_id: id});
+
+        if(user) {
+            user.goal.consumo = consumo;
+            user.goal.periodo = periodo;
+
+            user.save("done");
+
+            return res.json(user);
+        }
+
+        else {
+            return res.json({error: "Usuário não encontrado"});
         }
     }
 }

@@ -8,7 +8,24 @@ const UserSchema = new mongoose.Schema({
 
     hydrometer: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Hydrometer'
+        ref: 'Hydrometer',
+        required: true
+    },
+
+    company: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Company',
+        required: true
+    },
+
+    goal: {
+        consumo: {
+            type: Number
+        },
+
+        periodo: {
+            type: String
+        }
     }
 },
 
