@@ -16,7 +16,7 @@ module.exports = {
         }
 
         else {
-            return res.json({error: "Hidrômetro não encontrado"})
+            return res.json({error: "Hidrômetro não encontrado"});
         }
     },
 
@@ -36,7 +36,7 @@ module.exports = {
         }
 
         else {
-            return res.json({error: "Hidrômetro não encontrado"})
+            return res.json({error: "Hidrômetro não encontrado"});
         }
     }
 }
