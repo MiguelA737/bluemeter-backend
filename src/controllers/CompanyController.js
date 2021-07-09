@@ -56,5 +56,22 @@ module.exports = {
         else {
             return res.json({error: "Companhia não encontrada"});
         }
+    },
+
+    async updatePricing(req, res) {
+        const { id, pricing } = req.body;
+        const company = await Company.findOne({_id: id});
+
+        if(company) {
+            company.pricing = pricing;
+
+            company.save("done");
+
+            return res.json(company);
+        }
+
+        else {
+            return res.json({error: "Companhia não encontrada"})
+        }
     }
 }
