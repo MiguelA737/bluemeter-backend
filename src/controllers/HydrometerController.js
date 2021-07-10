@@ -21,8 +21,9 @@ module.exports = {
     },
 
     async writeNewReading(req, res) {
-        const { id, datetime, flow } = req.body;
+        const { id, flow } = req.body;
         const hydrometer = await Hydrometer.findOne({_id: id});
+        const datetime = Date.now();
 
         if(hydrometer) {
             hydrometer.history.push({
