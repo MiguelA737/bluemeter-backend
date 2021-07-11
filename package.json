@@ -1,6 +1,6 @@
 {
   "name": "bluemeter-backend",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "",
   "main": "src/app.js",
   "scripts": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/MiguelA737/bluemeter-backend#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.12.15"

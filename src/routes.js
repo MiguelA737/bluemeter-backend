@@ -6,7 +6,7 @@ const HydrometerController = require("./controllers/HydrometerController");
 const UserController = require("./controllers/UserController");
 
 routes.get('/', (req, res) => {
-    return res.send("Bluemeter Server v2.0.1. Inicialização de software concluída.");
+    return res.send("Bluemeter Server v2.0.2. Inicialização de software concluída.");
 });
 
 routes.post("/user/signup", UserController.store);

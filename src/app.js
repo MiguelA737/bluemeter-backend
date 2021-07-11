@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
+const cors = require('cors');
 const app = express();
 
 const hostname = "localhost";
@@ -14,6 +15,7 @@ mongoose.connect(process.env.MONGO_URL, {
     useCreateIndex: true
 })
 
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
